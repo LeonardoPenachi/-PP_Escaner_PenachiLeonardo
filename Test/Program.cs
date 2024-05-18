@@ -7,7 +7,9 @@ namespace Test
         static void Main(string[] args)
         {
             Libro libro = new Libro("pepe","pepe",23,"pepe","ewaad",500);
+            Mapa mapa = new Mapa("pepe", "pepe", 23, "pepe", "ewaad",10,10);
             Console.WriteLine(libro.ToString());
+            Console.WriteLine(mapa.ToString());
         }
     }
 }

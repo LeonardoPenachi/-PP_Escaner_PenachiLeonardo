@@ -26,8 +26,19 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder datos = new StringBuilder();
-            datos.Append(base.ToString());
-            datos.Append($"Número de páginas: {this.NumPaginas}");
+            string[] strings;
+            int contador = 0;
+            strings = base.ToString().Split('\n');
+            foreach (string s in strings)
+            {
+                if (contador == 3)
+                {
+                    datos.AppendLine($"ISBN: {this.ISBN}");
+                }
+                datos.AppendLine(s);
+                contador++;
+            }
+            datos.AppendLine($"Número de páginas: {this.NumPaginas}.");
             return datos.ToString();
         }
 

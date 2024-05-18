@@ -77,10 +77,10 @@ namespace Entidades
         public override string ToString()
         {
             StringBuilder datos = new StringBuilder();
-            datos.Append($"Titulo: {this.Titulo}");
+            datos.AppendLine($"Titulo: {this.Titulo}");
             datos.AppendLine($"Autor: {this.Autor}");
             datos.AppendLine($"Año: {this.Anio}");
-            datos.AppendLine($"Cód. de barras: {this.Barcode}");
+            datos.Append($"Cód. de barras: {this.Barcode}");
             return datos.ToString();
         } 
         #endregion
