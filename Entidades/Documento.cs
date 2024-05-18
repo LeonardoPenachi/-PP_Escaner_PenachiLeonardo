@@ -1,18 +1,20 @@
-﻿namespace Entidades
+﻿using System.Text;
+
+namespace Entidades
 {
-    abstract class Documento
+    public abstract class Documento
     {
         #region Atributos
-        protected int anio;
-        protected string autor;
-        protected string barcode;
-        protected Paso estado;
-        protected string numNormalizado;
-        protected string titulo;
+        private int anio;
+        private string autor;
+        private string barcode;
+        private Paso estado;
+        private string numNormalizado;
+        private string titulo;
         #endregion
 
         #region Enum
-        protected enum Paso
+        public enum Paso
         {
             Inicio,
             Distribuido,
@@ -24,22 +26,22 @@
 
         #region Propiedades
 
-        protected int Anio
+        public int Anio
         {
             get => this.anio;
         }
 
-        protected string Autor
+        public string Autor
         {
             get => this.autor;
         }
 
-        protected string Barcode
+        public string Barcode
         {
             get => this.barcode;
         }
 
-        protected Paso Estado
+        public Paso Estado
         {
             get => this.estado;
         }
@@ -49,7 +51,7 @@
             get => this.numNormalizado;
         }
 
-        protected string Titulo
+        public string Titulo
         {
             get => this.titulo;
         }
@@ -57,20 +59,29 @@
 
         #region Metodos
 
-        protected Documento(string titulo,string autor,int anio,string numNormalizado,string barcode)
+        public Documento(string titulo,string autor,int anio,string numNormalizado,string barcode)
         {
-
+            this.titulo = titulo;
+            this.autor = autor;
+            this.anio = anio;
+            this.numNormalizado = numNormalizado;  
+            this.barcode = barcode;
         }
-        protected bool AvanzarEstado()
+        public bool AvanzarEstado()
         {
             bool retorno = true;
 
             return retorno;
         }
 
-        protected override string ToString()
+        public override string ToString()
         {
-
+            StringBuilder datos = new StringBuilder();
+            datos.Append($"Titulo: {this.Titulo}");
+            datos.AppendLine($"Autor: {this.Autor}");
+            datos.AppendLine($"Año: {this.Anio}");
+            datos.AppendLine($"Cód. de barras: {this.Barcode}");
+            return datos.ToString();
         } 
         #endregion
     }
