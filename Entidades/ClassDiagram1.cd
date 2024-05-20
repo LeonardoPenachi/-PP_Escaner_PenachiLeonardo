@@ -32,7 +32,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Escaner">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="3.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>

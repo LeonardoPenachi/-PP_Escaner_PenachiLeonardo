@@ -22,7 +22,7 @@ namespace Entidades
         }
         public Departamento Locacion
         {
-            get => this.Locacion;
+            get => this.locacion;
         }
         public string Marca
         {
@@ -35,7 +35,7 @@ namespace Entidades
         #endregion
 
         #region Metodos
-        public bool CambiarEstadoDocumento(Documento d)
+        public static bool CambiarEstadoDocumento(Documento d)
         {
             return d.AvanzarEstado();
         }
@@ -51,7 +51,7 @@ namespace Entidades
         public static bool operator ==(Escaner e,Documento d)
         {
             bool bandera = false;
-            foreach(Documento d2 in e.listaDocumentos)
+            foreach(Documento d2 in e.ListaDocumentos)
             {
                 if(d.GetType() == typeof(Libro) && d2.GetType() == typeof(Libro))
                 {
@@ -85,10 +85,17 @@ namespace Entidades
         public static bool operator +(Escaner e,Documento d)
         {
             bool retorno = false;
-            if(e != d)
+            if (d.GetType() == typeof(Libro) && e.Tipo == TipoDoc.libro || d.GetType() == typeof(Mapa) && e.Tipo == TipoDoc.mapa)
             {
-                e.listaDocumentos.Add(d);
-                retorno = true;
+                if (d.Estado == Documento.Paso.Inicio) 
+                {
+                    if (e != d)
+                    {
+                        CambiarEstadoDocumento(d);
+                        e.listaDocumentos.Add(d);
+                        retorno = true;
+                    }
+                }
             }
             return retorno;
         }
