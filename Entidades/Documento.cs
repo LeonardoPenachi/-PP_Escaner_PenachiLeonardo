@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 
 namespace Entidades
 {
@@ -66,11 +67,29 @@ namespace Entidades
             this.anio = anio;
             this.numNormalizado = numNormalizado;  
             this.barcode = barcode;
+            this.estado = Paso.Inicio;
         }
         public bool AvanzarEstado()
         {
             bool retorno = true;
-
+            switch (this.Estado)
+            {
+                case Paso.Inicio:
+                    this.estado = Paso.Distribuido;
+                    break;
+                case Paso.Distribuido:
+                    this.estado = Paso.EnEscaner;
+                    break;
+                case Paso.EnEscaner:
+                    this.estado = Paso.EnRevision;
+                    break;
+                case Paso.EnRevision:
+                    this.estado = Paso.Terminado;
+                    break;
+                case Paso.Terminado:
+                    retorno = false;    
+                    break;
+            }
             return retorno;
         }
 

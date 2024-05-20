@@ -18,17 +18,39 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Libro">
-    <Position X="3.25" Y="3.75" Width="1.5" />
+    <Position X="4.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAQAAAAAEAAAAABAAAAAAAAAAAAAAAAAAAiA=</HashCode>
       <FileName>Libro.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Entidades.Mapa">
-    <Position X="3.25" Y="0.5" Width="1.5" />
+    <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAEAEAAAAAAAAEAAAAAAABAAAAAQAAAAAAAAAAAiA=</HashCode>
       <FileName>Mapa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Escaner">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Entidades.Escaner.Departamento">
+        <TypeIdentifier>
+          <NewMemberFileName>Escaner.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Entidades.Escaner.TipoDoc">
+        <TypeIdentifier>
+          <NewMemberFileName>Escaner.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABBAAAAAQAAAAQAAAAAAABAACAAAAAgBAAAAAQiQ=</HashCode>
+      <FileName>Escaner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
