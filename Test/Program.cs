@@ -82,7 +82,7 @@ namespace Test
 
             if (extensionLibroEnRev == l1.NumPaginas + l2.NumPaginas) { puntos += 3; }
             if (cantidadLibroEnRev == 2) { puntos += 1; }
-            if (resumenLibroEnRev == l1.ToString() + l2.ToString()) { puntos += 1; Console.WriteLine("no"); }
+            if (resumenLibroEnRev == l1.ToString() + l2.ToString()) { puntos += 1;}
 
             if (extensionLibroTerminado == 0) { puntos += 3; }
             if (cantidadLibroTerminado == 0) { puntos += 1; }
@@ -90,19 +90,19 @@ namespace Test
 
             if (extensionMapaDistr == m1.Superficie) { puntos += 3; }
             if (cantidadMapaDistr == 1) { puntos += 1; }
-            if (resumenMapaDistr == m1.ToString()) { puntos += 1; Console.WriteLine("Si"); }
+            if (resumenMapaDistr == m1.ToString()) { puntos += 1;}
 
             if (extensionMapaEnEsc == m2.Superficie) { puntos += 3; }
             if (cantidadMapaEnEsc == 1) { puntos += 1; }
-            if (resumenMapaEnEsc == m2.ToString()) { puntos += 1; Console.WriteLine("Si"); }
+            if (resumenMapaEnEsc == m2.ToString()) { puntos += 1; }
 
             if (extensionMapaEnRev == 0) { puntos += 3; }
             if (cantidadMapaEnRev == 0) { puntos += 1; }
             if (resumenMapaEnRev == "") { puntos += 1; }
 
-            if (extensionMapaTerminado == m3.Superficie + m4.Superficie) { puntos += 3; }
+            if (extensionMapaTerminado == m3.Superficie + m4.Superficie) { puntos += 3;}
             if (cantidadMapaTerminado == 2) { puntos += 1; }
-            if (resumenMapaTerminado == m3.ToString() + m4.ToString()) { puntos += 1; Console.WriteLine("Si"); }
+            if (resumenMapaTerminado == m3.ToString() + m4.ToString()) { puntos += 1;}
 
             Console.WriteLine($"Puntos: {puntos} / 40");
 
