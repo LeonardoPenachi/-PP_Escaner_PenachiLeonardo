@@ -18,11 +18,23 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="titulo"></param>
+        /// <param name="autor"></param>
+        /// <param name="anio"></param>
+        /// <param name="numNormalizado"></param>
+        /// <param name="barcode"></param>
+        /// <param name="numPaginas"></param>
         public Libro(string titulo, string autor, int anio, string numNormalizado, string barcode, int numPaginas) : base(titulo, autor, anio, numNormalizado, barcode)
         {
             this.numPaginas = numPaginas;
         }
-
+        /// <summary>
+        /// Devuelve un resumen de los datos del libro.
+        /// </summary>
+        /// <returns>Devuelve un string.</returns>
         public override string ToString()
         {
             StringBuilder datos = new StringBuilder();
@@ -41,7 +53,12 @@ namespace Entidades
             datos.AppendLine($"Número de páginas: {this.NumPaginas}.");
             return datos.ToString();
         }
-
+        /// <summary>
+        /// Con dos libros compara su barcode,ISBN,titulo y autor para saber si son iguales.
+        /// </summary>
+        /// <param name="l1"></param>
+        /// <param name="l2"></param>
+        /// <returns>Devuelve un valor booleano</returns>
         public static bool operator ==(Libro l1, Libro l2) 
         {
             bool retorno = false;

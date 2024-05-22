@@ -35,11 +35,20 @@ namespace Entidades
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Cambia el estado del documento.
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static bool CambiarEstadoDocumento(Documento d)
         {
             return d.AvanzarEstado();
         }
-
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="tipo"></param>
         public Escaner(string marca,TipoDoc tipo)
         {
             this.listaDocumentos = new List<Documento>();
@@ -47,7 +56,12 @@ namespace Entidades
             this.tipo = tipo;
             this.locacion = tipo == TipoDoc.mapa ? Departamento.mapoteca : Departamento.procesosTecnicos;
         }
-
+        /// <summary>
+        /// Busca en el escaner si existe un documento igual al pasado por parametro.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static bool operator ==(Escaner e,Documento d)
         {
             bool bandera = false;
@@ -81,7 +95,12 @@ namespace Entidades
         {
             return !(e == d);
         }
-
+        /// <summary>
+        /// En caso de que no haya un documento igual y que este sea del tipo del escaner, lo agregara.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public static bool operator +(Escaner e,Documento d)
         {
             bool retorno = false;

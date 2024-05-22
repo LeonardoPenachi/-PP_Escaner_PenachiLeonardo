@@ -59,7 +59,14 @@ namespace Entidades
         #endregion
 
         #region Metodos
-
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro, al estado se lo inicializa como "Inicio".
+        /// </summary>
+        /// <param name="titulo"></param>
+        /// <param name="autor"></param>
+        /// <param name="anio"></param>
+        /// <param name="numNormalizado"></param>
+        /// <param name="barcode"></param>
         public Documento(string titulo,string autor,int anio,string numNormalizado,string barcode)
         {
             this.titulo = titulo;
@@ -69,6 +76,10 @@ namespace Entidades
             this.barcode = barcode;
             this.estado = Paso.Inicio;
         }
+        /// <summary>
+        /// Este metodo hace avanzar un estado a un documento.
+        /// </summary>
+        /// <returns>Devuelve un valor booleano dependiendo de si pudo o no avanzar de estado</returns>
         public bool AvanzarEstado()
         {
             bool retorno = true;
@@ -92,7 +103,10 @@ namespace Entidades
             }
             return retorno;
         }
-
+        /// <summary>
+        /// Crea un resumen del documento.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder datos = new StringBuilder();

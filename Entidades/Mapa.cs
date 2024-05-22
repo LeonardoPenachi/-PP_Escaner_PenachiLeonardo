@@ -19,16 +19,31 @@ namespace Entidades
         public int Ancho
         { get => this.ancho;}
         public int Superficie
-        { get => this.ancho * this.alto;}
+        { get => this.alto * this.Ancho;}
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Inicializa los atributos con los valores pasados por parametro.
+        /// </summary>
+        /// <param name="titulo"></param>
+        /// <param name="autor"></param>
+        /// <param name="anio"></param>
+        /// <param name="numNormalizado"></param>
+        /// <param name="barcode"></param>
+        /// <param name="ancho"></param>
+        /// <param name="alto"></param>
         public Mapa(string titulo, string autor, int anio, string numNormalizado, string barcode,int ancho,int alto) : base(titulo,autor, anio, numNormalizado, barcode)
         {
            this.ancho = ancho;
            this.alto = alto;
         }
-
+        /// <summary>
+        /// Con dos mapas compara su barcode,titulo,autor,año y superficie, para saber si son el mismo.
+        /// </summary>
+        /// <param name="m1"></param>
+        /// <param name="m2"></param>
+        /// <returns>Devuelve un valor booleano.</returns>
         public static bool operator ==(Mapa m1, Mapa m2) 
         {
             bool retorno = false;
@@ -41,11 +56,15 @@ namespace Entidades
 
         public static bool operator !=(Mapa m1, Mapa m2) {  return !(m1 == m2);}
 
+        /// <summary>
+        /// Devuelve un resumen con los datos del mapa.
+        /// </summary>
+        /// <returns>Devuelve un string.</returns>
         public override string ToString()
         {
             StringBuilder texto = new StringBuilder();
             texto.Append(base.ToString());
-            texto.AppendLine($"\nSuperficie: {this.Ancho} * {this.Alto} = {this.Superficie} cm2.");
+            texto.AppendLine($"\nSuperficie: {this.Alto} * {this.Ancho} = {this.Superficie} cm2.");
             return texto.ToString();
         }
 
