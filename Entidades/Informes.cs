@@ -44,7 +44,7 @@ namespace Entidades
                         Libro libro = (Libro)d;
                         extension += libro.NumPaginas;
                         cantidad += 1;
-                        texto.AppendLine(libro.ToString());
+                        texto.Append(libro.ToString());
                     }
                     else
                     {
@@ -53,7 +53,7 @@ namespace Entidades
                             Mapa mapa = (Mapa)d;
                             extension += mapa.Superficie;
                             cantidad += 1;
-                            texto.AppendLine(mapa.ToString());
+                            texto.Append(mapa.ToString());
                         }
                     }
                 }

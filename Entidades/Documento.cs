@@ -113,7 +113,7 @@ namespace Entidades
             datos.AppendLine($"Titulo: {this.Titulo}");
             datos.AppendLine($"Autor: {this.Autor}");
             datos.AppendLine($"Año: {this.Anio}");
-            datos.Append($"Cód. de barras: {this.Barcode}");
+            datos.AppendLine($"Cód. de barras: {this.Barcode}");
             return datos.ToString();
         } 
         #endregion
